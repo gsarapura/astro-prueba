@@ -1,6 +1,7 @@
 ---
 const pageTitle: string = "About Me";
 
+// ______ Data ______ 
 interface Identity {
 	firstName: string;
 	country: string;
@@ -17,9 +18,15 @@ const identity: Identity = {
 
 const skills: string[] = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
+// ______ Conditional rendering ______ 
 const happy: boolean = true;
 const finished: boolean = false;
 const goal: number = 3;
+
+// ______ CSS ______ 
+ 
+const skillColor: string = "navy";
+
 ---
 
 <html lang="en">
@@ -36,6 +43,7 @@ const goal: number = 3;
 		<a href="/blog/">Blog</a>
 		
         <h1>{ pageTitle }</h1>
+		
 		<h2>... and my new Astro site!</h2>
 		<p></p>
 		<p>I am working through Astro's introductory tutorial. 
@@ -53,11 +61,24 @@ const goal: number = 3;
 		</ul>
 		<p>My skills are:</p>
 		<ul>
-		{skills.map((skill) => <li>{skill}</li>)}
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		{ happy && <p>I am happy to learn Astro!</p>}
 		{ finished && <p>I finished this tutorial.</p>}
 		{ goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
+
+	<style define:vars={{ skillColor }}>
+		h1 {
+		  color: purple;
+		  font-size: 4rem;
+		}
+
+		.skill {
+			color: var(--skillColor);
+			font-weight: bold;
+		}
+	</style>
+
 </html>
