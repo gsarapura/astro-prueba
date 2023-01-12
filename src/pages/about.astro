@@ -1,4 +1,8 @@
 ---
+// Components
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css'
 
 const pageTitle: string = "About Me";
@@ -40,9 +44,7 @@ const skillColor: string = "navy";
 		<title>{ pageTitle }</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
+		<Navigation />
 		
         <h1>{ pageTitle }</h1>
 		
@@ -69,6 +71,8 @@ const skillColor: string = "navy";
 		{ happy && <p>I am happy to learn Astro!</p>}
 		{ finished && <p>I finished this tutorial.</p>}
 		{ goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+		<Footer />
 	</body>
 
 	<style define:vars={{ skillColor }}>
