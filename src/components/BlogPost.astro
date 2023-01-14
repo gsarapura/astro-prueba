@@ -1,0 +1,7 @@
+---
+type Props = {url: string, title: string}
+const { url, title }: Props = Astro.props;
+---
+<li>
+    <a href={url}>{title}</a>
+</li>
