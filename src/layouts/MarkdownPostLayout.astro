@@ -1,7 +1,20 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-const { frontmatter } = Astro.props;
+interface FrontData {
+    title: string;
+    pubDate: string;
+    description: string;
+    author: string;
+    image: {
+        url: string;
+        alt: string;
+    }
+    tags: string[];
+}
+type Props = { frontmatter: FrontData}
+const { frontmatter }: Props = Astro.props;
+console.log(typeof frontmatter)
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
