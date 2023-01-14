@@ -3,5 +3,10 @@ type Props = {url: string, title: string}
 const { url, title }: Props = Astro.props;
 ---
 <li>
-    <a href={url}>{title}</a>
+    <a href={url} class="title">{title}</a>
 </li>
+<style>
+    .title{
+        color: rgb(78, 166, 166);
+    }
+</style>
