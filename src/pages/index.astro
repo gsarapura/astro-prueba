@@ -1,7 +1,7 @@
 ---
 // Components
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer/Footer.astro';
 
 import '../styles/global.css';
 
@@ -17,7 +17,7 @@ const pageTitle: string = "Home Page";
 		<title>{ pageTitle }</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 
 		<h1>{ pageTitle }</h1>	
 		<h2>My Astro WebSite</h2>	
